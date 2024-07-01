@@ -1,0 +1,94 @@
+/*********************************************************************\
+HERO SECTION
+\********************************************************************/
+/*
+*Hero background and color.................mobile view
+*
+*Hero layout and background changes........for bigger screens
+*/
+
+
+/* Hero background and color */
+
+.hero {
+  width:              100%;
+  display:            flex;
+  flex-flow:          column nowrap;
+  justify-content:    flex-start;
+  align-items:        center;
+  
+  
+} 
+
+
+.hero-content {
+  display:         flex;
+  flex-flow:       column nowrap;
+  justify-content: center;
+  align-items:     flex-start;
+  width:           100%;
+  padding-left:    var(--padding-left-right);
+  padding-right:   var(--padding-left-right);
+  padding-top:     1.8125rem;
+  background:      linear-gradient(to bottom, #ffff 50%, #EBEAEF 100%);
+ 
+}
+
+.hero-image {
+  width:           100%;
+  aspect-ratio:    1.5 / 1;
+  background:  url('/images/photos/hero-mobile.jpg') no-repeat center / cover;
+  box-shadow:      0 0 10px 0 rgba(235, 234, 239, 1);
+}
+
+  
+
+/*Hero background and layout for bigger screens*/
+@media (min-width: 380px) {
+  .hero-content {
+    padding-top: 4rem;
+  }
+}
+@media (min-width: 641px) {
+ 
+  .hero-content > * {
+    width:  80%;
+    align-self: flex-start;
+  }
+  .hero-image {
+    background:    url('/images/photos/hero-tablet.jpg') no-repeat center / cover;
+  }
+  
+  
+}
+@media (min-width: 986px) {
+  .hero {
+    flex-flow:        row-reverse nowrap;
+    justify-content:  center;
+    align-items:      center;
+    height:           var(--hero-height);
+  }
+  .hero-content {
+    background:      var(--background-color);
+    width:           50%;
+    height:          100%;
+    
+  }
+  .hero-content > * {
+    width: min(100%, 720px);
+    
+  }
+  .hero-image {
+    background:    url('/images/photos/hero-desktop.jpg') no-repeat center / cover;
+    background-position: 35% center;
+    width:           50%;
+    height:          100%;
+    box-shadow:      unset;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+   border-bottom: 2px solid #E9E9F1;
+  }
+}

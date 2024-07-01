@@ -1,0 +1,107 @@
+.btn {
+      
+    display:        inline-block;
+    width:          max(100%, 11.6436rem);
+    border:         0.125rem solid;
+    border-radius:  .125rem;
+    opacity:        1;
+    padding:        .5rem;
+    font-size:      var(--font-size-small);
+    line-height:    var(--line-height-small);
+    text-align:     center;
+    text-transform: uppercase;
+    align-self:     center;
+  }
+  
+  .btn:hover {
+    transition:       0.3s;
+  }
+  
+    .btn__primary {
+      background:   var(--brand-color) 0% 0% no-repeat padding-box;
+      border-color: var(--brand-color);
+      color:        var(--background-color);
+    }
+
+    .btn__primary:hover {
+      background:   transparent;
+      border-color: var(--brand-color);
+      color:        var(--brand-color);
+    }
+
+    .btn__hollow {
+      background:   transparent;
+      border-color: var(--brand-color);
+      color:        var(--brand-color);
+    }
+
+    .btn__hollow:hover {
+      background:   var(--brand-color);
+      border-color: var(--brand-color);
+      color:        var(--background-color);
+    }
+
+
+    .btn--wrapper {
+      display:         flex;
+      flex-flow:       column nowrap;
+      justify-content: flex-start;
+      width:           100%;
+      gap:             1.4rem;
+      margin-top:      1.5rem;
+      margin-bottom:   1.1875rem;
+    }
+
+ 
+@media (min-width: 435px) {
+  .btn {
+    max-width:    15rem;
+  }
+}
+@media (min-width: 568px) {
+  .btn--wrapper {
+    flex-flow:       row nowrap;
+    gap:             1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn--wrapper {
+    margin-bottom: 1.75rem;
+  }
+}
+@media (min-width: 986px) {
+  .btn {
+    width: auto;
+  }
+  .btn__feature {
+    padding-left:  1rem;
+    padding-right: 1rem;}
+}
+@media (min-width: 1200px) {
+  .btn {
+    font-size: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+
+
+    /* On tablet and mobile there is no hover effect */
+
+    /*@media (max-width: 923px) {
+      .btn__primary:hover {
+        background:   var(--brand-color) 0% 0% no-repeat padding-box;
+        border-color: var(--brand-color);
+        color:        var(--secondary-color);
+      } 
+      .btn__hollow:hover {
+        background:   transparent;
+        border-color: var(--secondary-color);
+        color:        var(--secondary-color); 
+      }
+    }
+  */
+    
