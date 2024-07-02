@@ -36,13 +36,12 @@ HERO SECTION
 }
 
 .hero-image {
-  width:           100%;
+  width:         100%;
   /*aspect-ratio:    1.5 / 1;*/
   height:        100%;
   background:  url('/images/photos/hero-mobile.jpg') no-repeat center / cover;
-  box-shadow:      0 0 10px 0 rgba(235, 234, 239, 1);
- /* box-shadow:      0 0 50px 0 rgb(189, 186, 186);*/
-  z-index:        1;
+  box-shadow:    0 0 10px 0 rgba(235, 234, 239, 1);
+  z-index:       1;
   
   
 }
@@ -50,13 +49,15 @@ HERO SECTION
   
 
 /*Hero background and layout for bigger screens*/
-@media (min-width: 380px) {
+@media (min-height: 638px) {
   .hero-content {
-    padding-top: 4rem;
+    padding-bottom: 1.8125rem;
   }
 }
 @media (min-width: 641px) {
- 
+  .hero-content {
+    padding-top: 4rem;
+  }
   .hero-content > * {
     width:  80%;
     align-self: flex-start;
