@@ -365,13 +365,14 @@
     --brand-color:          #5F7E92; 
     --brand-color-rgb:      95, 126, 146;
     --background-color:     #FFFFFF; /* white*/
+    --background-color-rgb: 255, 255, 255;
     --font-size-regular:    clamp(1rem, .9vw + .8rem, 1.25rem);
     --line-height-regular:  calc(var(--font-size-regular) * 1.5);
     --font-size-title:      clamp(1.6875rem, 2vw + 1rem, 2.1875rem);
     --hero-title:           clamp(1.6875rem, 2vw + 1rem, 2.8125rem);
     --font-size-small:      0.875rem;
     --line-height-small:    1rem;
-    --header-height:        4.5rem;
+    --header-height:        clamp(3.5rem, 5vw + 2rem, 6rem);
     --hero-height:          calc(100dvh - var(--header-height)); 
     --padding-left-right:   6%; 
     --card-padding:         1.25rem;
@@ -554,15 +555,12 @@ html {
   
 
 
-/*@media (min-width: 744px) {
-  main {
-    gap: 4rem;
-  }
-}*/
-
 @media (min-width: 956px) {
   main {
     gap: 5rem;
+  }
+  .homepage {
+    gap: 10rem;
   }
 }
  
@@ -585,6 +583,7 @@ html {
     text-align:     center;
     text-transform: uppercase;
     align-self:     center;
+    
   }
   
   .btn:hover {
@@ -621,9 +620,11 @@ html {
       flex-flow:       column nowrap;
       justify-content: flex-start;
       width:           100%;
-      gap:             1.4rem;
-      margin-top:      1.5rem;
+      gap:             1rem; /*1.4rem volt*/
+      margin-top:      1.3rem;
       margin-bottom:   1.1875rem;
+      margin-bottom:   0;
+      z-index:         2;
     }
 
  
@@ -635,16 +636,20 @@ html {
 @media (min-width: 568px) {
   .btn--wrapper {
     flex-flow:       row nowrap;
-    gap:             1rem;
+   /* gap:             1rem;*/
   }
 }
 
 @media (min-width: 768px) {
   .btn--wrapper {
     margin-bottom: 1.75rem;
+    margin-bottom: 4rem;
   }
 }
 @media (min-width: 986px) {
+  .btn--wrapper {
+    margin-top: 2rem;
+  }
   .btn {
     width: auto;
   }
@@ -859,7 +864,7 @@ HERO SECTION
   flex-flow:          column nowrap;
   justify-content:    flex-start;
   align-items:        center;
-  
+  height:             var(--hero-height);
   
 } 
 
@@ -867,21 +872,27 @@ HERO SECTION
 .hero-content {
   display:         flex;
   flex-flow:       column nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items:     flex-start;
   width:           100%;
   padding-left:    var(--padding-left-right);
   padding-right:   var(--padding-left-right);
   padding-top:     1.8125rem;
   background:      linear-gradient(to bottom, #ffff 50%, #EBEAEF 100%);
- 
+  height:          auto; 
+  
 }
 
 .hero-image {
   width:           100%;
-  aspect-ratio:    1.5 / 1;
+  /*aspect-ratio:    1.5 / 1;*/
+  height:        100%;
   background:  url('/images/photos/hero-mobile.jpg') no-repeat center / cover;
   box-shadow:      0 0 10px 0 rgba(235, 234, 239, 1);
+ /* box-shadow:      0 0 50px 0 rgb(189, 186, 186);*/
+  z-index:        1;
+  
+  
 }
 
   
@@ -915,7 +926,7 @@ HERO SECTION
     background:      var(--background-color);
     width:           50%;
     height:          100%;
-    
+    justify-content: center;
   }
   .hero-content > * {
     width: min(100%, 720px);
@@ -927,6 +938,7 @@ HERO SECTION
     width:           50%;
     height:          100%;
     box-shadow:      unset;
+    z-index:         unset;
   }
 }
 
@@ -947,7 +959,7 @@ HERO SECTION
   flex-flow:       column nowrap;
   align-items:     center;
   justify-content: flex-start;
-  gap:             2.5rem;
+  gap:             4rem;
   
 }
 
@@ -956,7 +968,7 @@ HERO SECTION
     flex-flow:       column nowrap;
     align-items:     flex-start;
     justify-content: flex-start;
-    gap:             2rem;
+    gap:             1.5rem;
     
   }
 
@@ -987,9 +999,6 @@ HERO SECTION
       }
 
 @media (min-width: 744px) {
-  .feature {
-    gap:      4rem;
-  }
   .feature--wrapper {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -1005,15 +1014,17 @@ HERO SECTION
   .article-title {
     width:   76.4%;
   }
+ 
 }
 
 @media (min-width:956px) {
  .feature {
-    gap: 5rem;
+    gap: 10rem;
   }
   
   .reverse {
     flex-flow: row-reverse nowrap;
+   
   }
   .feature-image {
     width: 50%;
@@ -1023,7 +1034,19 @@ HERO SECTION
   .article-title {
     width: calc(50% - 1.6rem);
   }
-  
+ 
+  .feature--wrapper {
+   
+    align-items:  stretch;
+    gap:          2rem;
+  }
+  .feature-content > p:last-of-type {
+    margin-bottom: 2rem;
+   
+  }
+  .feature-content > .btn {
+    margin-top: auto;
+  }
 }
 /*!********************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./public/css/partials/testimonials.css ***!
@@ -1238,19 +1261,19 @@ HERO SECTION
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./public/css/partials/services.css ***!
   \****************************************************************************************************************/
 .services {
-  padding-left: var(--padding-left-right);
-  padding-right: var(--padding-left-right);
-  max-width:     calc(824px + 2*(var(--padding-left-right)));
-  display:      flex;
-  flex-flow:    column nowrap;
-  gap:          4rem;
-  align-items:  center;
+  padding-left:    var(--padding-left-right);
+  padding-right:   var(--padding-left-right);
+  max-width:       calc(824px + 2*(var(--padding-left-right)));
+  display:         flex;
+  flex-flow:       column nowrap;
+  gap:             2rem;
+  align-items:     center;
   justify-content: flex-start;
 }
 
   .services-headline {
     padding-top:     2rem;
-    width:         clamp(15.6rem, 100%, 23.75rem);
+    width:           clamp(15.6rem, 100%, 23.75rem);
   }
 
     .services-headline > h1 {
@@ -1323,7 +1346,8 @@ HERO SECTION
 
 
    .cta__services {
-    padding-left: 0;
+    padding-top:   2rem;
+    padding-left:  0;
     padding-right: 0;
     width:         clamp(15.6rem, 100%, 23.75rem);
    }
@@ -1332,14 +1356,18 @@ HERO SECTION
   :root {
     --card-padding: 1.5625rem; 
   }
-  .services-headline {
-    padding-top:  4rem;
-  }
+  
 }
 
 @media (min-width: 627px) {
   .cta__services > .cta--wrapper {
    width: unset;
+  }
+  .services {
+    gap: 4rem;
+  }
+  .services-headline {
+    padding-top: 4rem;
   }
 }
 
@@ -1453,7 +1481,9 @@ HERO SECTION
 
   .js-answer {
     display: none;
-    padding-left: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+    
   }
 
   .js-answer.visible {
@@ -1538,9 +1568,13 @@ HERO SECTION
 
 @media (min-width: 1024px) {
   .contact {
-    padding-top: 0;
-    padding-left: 0;
-    flex-flow: row nowrap;
+    padding-top:    0;
+    padding-left:   0;
+    padding-bottom: 0;
+    flex-flow:      row nowrap;
+    justify-content: flex-start;
+    gap:            3rem;
+    height:         calc(var(--hero-height) - var(--footer-height));
   }
 
   .contact-img {

@@ -7,7 +7,7 @@
   flex-flow:       column nowrap;
   align-items:     center;
   justify-content: flex-start;
-  gap:             2.5rem;
+  gap:             4rem;
   
 }
 
@@ -16,7 +16,7 @@
     flex-flow:       column nowrap;
     align-items:     flex-start;
     justify-content: flex-start;
-    gap:             2rem;
+    gap:             1.5rem;
     
   }
 
@@ -47,9 +47,6 @@
       }
 
 @media (min-width: 744px) {
-  .feature {
-    gap:      4rem;
-  }
   .feature--wrapper {
     flex-flow: row nowrap;
     align-items: flex-start;
@@ -65,15 +62,17 @@
   .article-title {
     width:   76.4%;
   }
+ 
 }
 
 @media (min-width:956px) {
  .feature {
-    gap: 5rem;
+    gap: 10rem;
   }
   
   .reverse {
     flex-flow: row-reverse nowrap;
+   
   }
   .feature-image {
     width: 50%;
@@ -83,5 +82,17 @@
   .article-title {
     width: calc(50% - 1.6rem);
   }
-  
+ 
+  .feature--wrapper {
+   
+    align-items:  stretch;
+    gap:          2rem;
+  }
+  .feature-content > p:last-of-type {
+    margin-bottom: 2rem;
+   
+  }
+  .feature-content > .btn {
+    margin-top: auto;
+  }
 }

@@ -11,6 +11,7 @@
     text-align:     center;
     text-transform: uppercase;
     align-self:     center;
+    
   }
   
   .btn:hover {
@@ -47,9 +48,11 @@
       flex-flow:       column nowrap;
       justify-content: flex-start;
       width:           100%;
-      gap:             1.4rem;
-      margin-top:      1.5rem;
+      gap:             1rem; /*1.4rem volt*/
+      margin-top:      1.3rem;
       margin-bottom:   1.1875rem;
+      margin-bottom:   0;
+      z-index:         2;
     }
 
  
@@ -61,16 +64,20 @@
 @media (min-width: 568px) {
   .btn--wrapper {
     flex-flow:       row nowrap;
-    gap:             1rem;
+   /* gap:             1rem;*/
   }
 }
 
 @media (min-width: 768px) {
   .btn--wrapper {
     margin-bottom: 1.75rem;
+    margin-bottom: 4rem;
   }
 }
 @media (min-width: 986px) {
+  .btn--wrapper {
+    margin-top: 2rem;
+  }
   .btn {
     width: auto;
   }
