@@ -366,7 +366,7 @@
     --brand-color-rgb:      95, 126, 146;
     --background-color:     #FFFFFF; /* white*/
     --background-color-rgb: 255, 255, 255;
-    --font-size-regular:    clamp(1rem, .9vw + .8rem, 1.25rem);
+    --font-size-regular:    clamp(1rem, 1vw + .5rem, 1.125rem);
     --line-height-regular:  calc(var(--font-size-regular) * 1.5);
     --font-size-title:      clamp(1.6875rem, 2vw + 1rem, 2.1875rem);
     --hero-title:           clamp(1.6875rem, 2vw + 1rem, 2.8125rem);
@@ -575,7 +575,7 @@ html {
     display:        inline-block;
     width:          max(100%, 11.6436rem);
     border:         0.125rem solid;
-    border-radius:  .125rem;
+    border-radius:  .5rem;
     opacity:        1;
     padding:        .5rem;
     font-size:      var(--font-size-small);
@@ -654,12 +654,14 @@ html {
     width: auto;
   }
   .btn__feature {
-    padding-left:  1rem;
-    padding-right: 1rem;}
+    width:  11.78rem;
+    padding-left:  2rem;
+    padding-right: 2rem;
+  }
 }
 @media (min-width: 1200px) {
   .btn {
-    font-size: 1rem;
+   /* font-size: 1rem;*/
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -995,9 +997,10 @@ HERO SECTION
 
       .feature-image {
         width:          100%;
-        border-radius:  .125rem;
+        border-radius:  .5rem;
         aspect-ratio:   279/228;
         object-fit:     cover;
+                 
       }
 
 @media (min-width: 744px) {
@@ -1019,7 +1022,7 @@ HERO SECTION
  
 }
 
-@media (min-width:956px) {
+@media (min-width:1200px) {
  .feature {
     gap: 10rem;
   }
@@ -1296,7 +1299,7 @@ HERO SECTION
       display:       flex;
       flex-flow:     column nowrap;
       border:        .0625rem solid var(--primary-color);
-      border-radius: .125rem;
+      border-radius: .5rem;
       padding:       var(--card-padding);
       width:         clamp(15.6rem, 100%, 23.75rem);
     }
@@ -1309,6 +1312,7 @@ HERO SECTION
         border-bottom: .0625rem solid var(--secondary-color);
         padding-bottom: var(--card-padding);
         text-align:     center;
+        width:         100%;
       }
 
       .card-text {
@@ -1402,7 +1406,7 @@ HERO SECTION
   padding-left:   var(--padding-left-right);
   padding-right:  var(--padding-left-right);
   padding-bottom: 4rem;
-  max-width:      calc(600px + 2 * var(--padding-left-right));
+  max-width:      calc(31.07rem + 2 * var(--padding-left-right));
 }
 
 .faq-title {
@@ -1503,6 +1507,146 @@ HERO SECTION
   .faq {
     padding-top: 4rem;
     gap: 4rem;
+  }
+}
+/*!*****************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./public/css/partials/portfolio.css ***!
+  \*****************************************************************************************************************/
+.portfolio {
+  padding-left: var(--padding-left-right);
+  padding-right: var(--padding-left-right);
+  padding-top:   2rem;
+  gap:           2rem;
+  margin-bottom: 4rem;
+  max-width:     1440px;
+  
+}
+
+  .portfolio-headline {
+    width: clamp(15.6rem, 100%, 23.75rem);
+  }
+  
+  .portfolio--wrapper {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    gap: 4rem;
+  }
+
+  .portfolio-card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "content"
+    "img"
+    "link";
+    border: .0625rem solid var(--primary-color);
+    border-radius: .5rem;
+    padding: var(--card-padding);
+    justify-content: center;
+    width: clamp(15.6rem, 100%, 23.75rem);
+    height: 100%;
+  }
+
+  .portfolio-content {grid-area: content;}
+  .img--wrapper {grid-area: img;}
+  .portfolio-link {grid-area: link;}
+
+
+  .img--wrapper {
+    display:     flex;
+    gap:         2rem;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: var(--card-padding);
+  }
+  .img__desktop {
+    display: none;
+  }
+
+  .img__mobile {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+  }
+
+  .portfolio-link {
+        display:     block;
+        color:       var(--primary-color);
+        padding-top: var(--card-padding);
+        border-top:  .0625rem solid var(--secondary-color);
+        text-align:  center;
+        font-size:   var(--font-size-title);
+        line-height: calc(var(--font-size-title) * 1.2);
+        font-weight: 600;
+        
+  }
+
+  .portfolio-link:hover {
+    color: var(--secondary-color);
+  }
+
+@media (min-width: 627px) {
+  .portfolio {
+    gap: 4rem;
+    padding-top: 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .portfolio-headline {
+    width: clamp(15.6rem, 50%, 75rem);
+    align-self: flex-start
+  }
+  .portfolio-card {
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "content img"
+    "link img";
+    width: clamp(15.6rem, 100%, 82.125rem); 
+    align-content: center;
+  }
+  .img__desktop {
+    display: block;
+    width: 70%;
+    height: auto;
+    border-radius: .5rem;
+  }
+  .img__mobile {
+    width: 20%;
+    height: auto;
+  }
+  .img--wrapper {
+    /*border: 1px solid red;*/
+    align-items: stretch;
+    justify-content: flex-end;
+    padding-bottom: 0;
+  }
+  .portfolio-content {
+    display: flex;
+    flex-flow: column nowrap;
+    /*border: 1px solid green;*/
+    align-items: center;
+  }
+  .portfolio-content > .card-title {
+    
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .portfolio-link {
+   /* border: 1px solid blue;*/
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .portfolio-content > .card-text {
+    width: 90%;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 /*!****************************************************************************************************************!*\
