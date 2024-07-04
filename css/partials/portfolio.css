@@ -39,7 +39,10 @@
   .img--wrapper {grid-area: img;}
   .portfolio-link {grid-area: link;}
 
-
+  .portfolio-content h2, .portfolio-link {
+    font-size: calc(var(--font-size-regular) * 1.4);
+    line-height: calc(var(--font-size-regular) * 1.4);
+  }
   .img--wrapper {
     display:     flex;
     gap:         2rem;
@@ -65,8 +68,6 @@
         padding-top: var(--card-padding);
         border-top:  .0625rem solid var(--secondary-color);
         text-align:  center;
-        font-size:   var(--font-size-title);
-        line-height: calc(var(--font-size-title) * 1.2);
         font-weight: 600;
         
   }
